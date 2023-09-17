@@ -2,6 +2,7 @@ const connectDB = require("./db")
 const express = require("express");
 const router = require("./routes");
 const dotenv = require("dotenv")
+const cors = require("cors")
 
 dotenv.config({
   path: "./.env"
@@ -15,6 +16,9 @@ app.use(express.json());
 
 // Connecting to the Database
 connectDB()
+
+// Handling CORS
+app.use(cors())
 
 // Routes
 app.use(router);
