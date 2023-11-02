@@ -8,11 +8,12 @@ const {
   getSingleStudent,
   addStudent,
   deleteStudent,
-  updateStudent
+  updateStudent,
+  getLexicalJSON
 } = require("../controllers/students");
 
 // Get all students
-router.get("/", getAllStudents);
+router.get("/", getLexicalJSON);
 
 // Get one student
 router.get("/:id", getSingleStudent);
@@ -25,5 +26,8 @@ router.put("/:id", updateStudent);
 
 // Delete one student
 router.delete("/:id", deleteStudent);
+
+// lexicalJSON Test
+// router.delete("/lexicalJSON", getLexicalJSON);
 
 module.exports = router;
