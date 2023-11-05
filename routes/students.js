@@ -1,6 +1,6 @@
-const express = require("express");
+const express = require('express')
 
-const router = express.Router();
+const router = express.Router()
 
 // Importing our student controllers
 const {
@@ -9,25 +9,21 @@ const {
   addStudent,
   deleteStudent,
   updateStudent,
-  getLexicalJSON
-} = require("../controllers/students");
+} = require('../controllers/students')
 
 // Get all students
-router.get("/", getLexicalJSON);
+router.get('/', getAllStudents)
 
 // Get one student
-router.get("/:id", getSingleStudent);
+router.get('/:id', getSingleStudent)
 
 // Add student
-router.post("/", addStudent);
+router.post('/', addStudent)
 
 // Update one student
-router.put("/:id", updateStudent);
+router.put('/:id', updateStudent)
 
 // Delete one student
-router.delete("/:id", deleteStudent);
+router.delete('/:id', deleteStudent)
 
-// lexicalJSON Test
-// router.delete("/lexicalJSON", getLexicalJSON);
-
-module.exports = router;
+module.exports = router
